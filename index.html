@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UXCourses | Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="d-flex flex-column align-items-center justify-content-center vh-100">
+    <a href="/" style="background: transparent"><img src="/assets/img/iucourses_logo.png" alt="UXCourses Logo" width="350" class="mt-5 mb-3"></a>
+    <div id="login" class="card p-4 shadow-sm" style="width: 350px;">
+        <h4 class="text-center mb-3">Anmelden</h4>
+        <form id="loginForm">
+            <div class="mb-3">
+                <label for="email" class="form-label">E-Mail oder Benutzername</label>
+                <input type="text" id="email" class="form-control">
+                <div id="emailError" class="error-message"></div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Passwort</label>
+                <input type="password" id="password" class="form-control">
+                <div id="passwordError" class="error-message"></div>
+            </div>
+            <!-- Captcha-Bereich (standardmäßig ausgeblendet) -->
+            <div id="captchaContainer" class="captcha-container">
+                <img id="captchaImage" src="" alt="Captcha">
+                <input type="text" id="captchaInput" class="form-control" placeholder="Captcha eingeben">
+                <div id="captchaError" class="error-message"></div>
+            </div>
+            <div class="mb-3 text-end">
+                <a href="#" class="text-decoration-none">Passwort vergessen?</a>
+            </div>
+            <button type="submit" class="btn btn-login w-100">Anmelden</button>
+        </form>
+        <div class="text-center mt-3">
+            <span>Noch kein Konto? <a href="#" class="text-decoration-none" style="cursor: not-allowed">Registrieren</a></span>
+        </div>
+    </div>
+
+    <div id="forgot-password" class="card p-4 shadow-sm" style="width: 350px; display: none">
+        <h4 class="text-center mb-3">Passwort vergessen</h4>
+        <form id="loginFormPassword">
+            <div class="mb-3">
+                <label for="forgotEmail" class="form-label">E-Mail</label>
+                <input type="text" id="forgotEmail" class="form-control">
+                <div id="forgotEmailError" class="error-message"></div>
+            </div>
+    
+            <!-- Captcha-Bereich (standardmäßig ausgeblendet) -->
+            <div id="captchaContainer-2" class="captcha-container" style="display: none;">
+                <img id="captchaImage-2" src="" alt="Captcha">
+                <input type="text" id="forgotCaptchaInput" class="form-control" placeholder="Captcha eingeben">
+                <div id="captchaError-2" class="error-message mb-3"></div>
+            </div>
+            <button type="submit" class="btn btn-login w-100">Passwort zurücksetzen</button>
+        </form>
+        <div class="text-center mt-3">
+            <span><a href="#" id="backToLoginLink" class="text-decoration-none">Zurück zum Login</a></span>
+        </div>
+    </div>    
+
+    <div class="fixed-bottom-card">
+        <h2>Usability-Test (v.1.0.0)</h2>
+        <h4 class="mb-4">Login-Prototyp für UXCourses</h4>
+        <p class="mb-0 small">Vielen Dank, dass Sie an unserem Usability-Test teilnehmen. Damit leisten Sie einen wichtigen Schritt zur stetigen Optimierung der Webseite für alle Nutzer.<br><br>Bitte nutzen Sie für den Usability-Test nachfolgende Demo-Zugangsdaten. Sie können auch abweichende Daten eingeben um etwaige Fehlermeldungen zu simulieren. Der Fokus dieses Tests liegt auf der Anzeige von Fehlermeldungen und der allgemeinen Benutzerführung.<br><br><strong>⚠️ Wichtiger Hinweis:</strong> Dieser Entwurf dient ausschließlich zur groben Veranschaulichung des Designs/User Interfaces und der Benutzerführung. Es handelt sich nicht um das endgültige Produkt, und sowohl visuelle als auch funktionale Aspekte können sich noch ändern. <br><br>Dieser Prototyp speichert oder verarbeitet keine echten Anmeldedaten. Sämtliche Eingaben dienen ausschließlich zu Testzwecken und haben keine Auswirkungen auf ein reales System.</p>
+        <hr class="my-4">
+        <p class="mb-0 small"><h4>🔒 Demo-Zugangsdaten</h4>
+            <ul class="list-group mt-4">
+                <li class="list-group-item">E-Mail: <code>demo@uxcourses.com</code></li>
+                <li class="list-group-item">Passwort: <code>Test1234</code></li>
+              </ul>
+        </p>
+        <hr class="my-4">
+        <div class="mb-0"><h4>🧪 Empfohlener Testablauf</h4>
+            <p class="small mt-4">Die folgende Liste enthält empfohlene Testschritte, um verschiedene Szenarien abzudecken. Sie können das Mockup jedoch frei erkunden und auch eigene Testfälle ausprobieren. Falls Ihnen Unklarheiten, Probleme oder Verbesserungsvorschläge auffallen, notieren Sie diese bitte.</p>
+            <ol class="list-group list-group-numbered mt-4 small" style="text-align: left;">
+                <li class="list-group-item">E-Mail-Adresse/Benutzer und Passwort nicht ausfüllen und auf <code>Anmelden</code> klicken</li>
+                <li class="list-group-item">E-Mail-Adresse/Benutzer ausfüllen und Passwort nicht ausfüllen und auf <code>Anmelden</code> klicken</li>
+                <li class="list-group-item">E-Mail-Adresse/Benutzer nicht ausfüllen und Passwort ausfüllen und auf <code>Anmelden</code> klicken</li>
+                <li class="list-group-item">Zufällige E-Mail-Adresse/Benutzer aufüllen und Passwort nicht ausfüllen und auf <code>Anmelden</code> klicken</li>
+                <li class="list-group-item">Demo-Zugangsdaten E-Mail-Adresse/Benutzer aufüllen und Passwort nicht ausfüllen und auf <code>Anmelden</code> klicken</li>
+                <li class="list-group-item">E-Mail-Adresse/Benutzer und Passwort ausfüllen (Demo-Zugangsdaten) und auf <code>Anmelden</code> klicken</li>
+                <li class="list-group-item">Zufällige E-Mail-Adresse/Benutzer ausfüllen und zufälliges Passwort ausfüllen und auf <code>Anmelden</code> klicken</li>
+                <li class="list-group-item">Demo-E-Mail-Adresse/Benutzer ausfüllen und falsches Passwort eingeben und auf <code>Anmelden</code> klicken</li>
+                <li class="list-group-item">Nach dreimaliger falscher Passworteingabe prüfen, ob das Captcha erscheint</li>
+                <li class="list-group-item">Nach dreimaliger falscher Passworteingabe Captcha-Feld leer lassen und auf <code>Anmelden</code> klicken</li>
+                <li class="list-group-item">Nach dreimaliger falscher Passworteingabe falsches Captcha eingeben und auf <code>Anmelden</code> klicken</li>
+                <li class="list-group-item">Nach dreimaliger falscher Passworteingabe korrektes Captcha eingeben, aber falsches Passwort und auf <code>Anmelden</code> klicken</li>
+                <li class="list-group-item">Nach dreimaliger falscher Passworteingabe korrektes Captcha und korrektes Passwort eingeben und auf <code>Anmelden</code> klicken</li>
+                <li class="list-group-item">Auf <code>Passwort vergessen?</code> klicken und prüfen, ob das Formular angezeigt wird</li>
+                <li class="list-group-item">Im <code>Passwort vergessen?</code>-Formular eine zufällige E-Mail-Adresse eingeben und auf <code>Absenden</code> klicken</li>
+                <li class="list-group-item">Im <code>Passwort vergessen?</code>-Formular die Demo-E-Mail-Adresse eingeben und auf <code>Absenden</code> klicken</li>
+                <li class="list-group-item">Nach dreimaliger falscher Eingabe der E-Mail-Adresse prüfen, ob das Captcha erscheint</li>
+                <li class="list-group-item">Nach dreimaliger falscher Eingabe der E-Mail-Adresse falsches Captcha eingeben und auf <code>Absenden</code> klicken</li>
+                <li class="list-group-item">Nach dreimaliger falscher Eingabe der E-Mail-Adresse korrektes Captcha eingeben und auf <code>Absenden</code> klicken</li>
+                <li class="list-group-item">Zurück zum Login gehen und prüfen, ob die ursprüngliche Ansicht wiederhergestellt wird</li>
+                <li class="list-group-item">Responsive Ansicht auf verschiedenen Endgeräten wie Smartphone und Tablet prüfen</li>
+              </ol>
+            </div>
+        <hr class="my-4">
+        <h4>🙏 Feedback-Erwartung</h4>
+        <p class="small mt-4">Bitte dokumentieren Sie Ihre Beobachtungen während des Tests. Notieren Sie auffällige Probleme, Unklarheiten oder Verbesserungsvorschläge. Teilen Sie diese anschließend mit dem Testleiter.</p>
+        <hr class="my-4">
+        <p style="font-size: 80%; color: #484848">Dieses Entwurf enstand im Rahmen des Moduls UX-Prototyping (DLBUXUXP01-01), ist rein fiktiver Natur und dient nur als Veranschaulichung eines möglichen Mid-Fidelity-Entwurfs – ©2025 Thayamohan Mohanathas</p>
+    </div>
+
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>

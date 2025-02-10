@@ -1,0 +1,71 @@
+body {
+    background: #EEE !important;
+}
+.card {
+    background-color: #FFF;
+    border: none;
+    box-shadow: none !important;
+}
+input, a {
+    background-color: #DDD;
+    border: none;
+    color: black;
+}
+button.btn-login {
+    background-color: #DDD;
+    border: none;
+    color: black;
+}
+button.btn-login:hover, a:hover {
+    background-color: #EEE;
+}
+h4, label {
+    color: black;
+}
+.fixed-bottom-card {
+    position: fixed;
+    overflow: auto;
+    background-color: #FFF;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    padding: 3em;
+    text-align: justify;
+}
+.error-message {
+    color: red;
+    font-size: 0.875em;
+    margin-top: 0.5em;
+}
+.captcha-container {
+    display: none; /* Standardmäßig ausgeblendet */
+    margin-top: 1em;
+}
+.captcha-container img {
+    margin-bottom: 0.5em;
+}
+#captchaError {
+    margin-bottom: 1em; /* Abstand unter der Captcha-Fehlermeldung */
+}
+
+@media(min-width: 1200px) {
+    body {
+        padding-right: 25vw;
+    }
+    .fixed-bottom-card {
+        height: 100vh;
+        width: 25vw;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+@media(max-width: 1199px) {
+    body {
+        padding-bottom: 25vh;
+    }
+    .fixed-bottom-card {
+        height: 25vh;
+        bottom: 0;
+        left: 0;
+        width: 100vw
+    }
+}
