@@ -170,4 +170,23 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.reload();
         }
     });
+
+
+    const toggleButton = document.getElementById("show");
+    const card = document.querySelector(".fixed-bottom-card");
+
+    toggleButton.addEventListener("click", function() {
+        if (card.classList.contains("show-card")) {
+            card.classList.remove("show-card");
+            toggleButton.textContent = "Hinweis zum Testablauf";
+            toggleButton.classList.remove("btn-dark");
+            toggleButton.classList.add("btn-danger");
+        } else {
+            card.classList.add("show-card");
+            toggleButton.textContent = "Schliessen";
+            toggleButton.classList.remove("btn-danger");
+            toggleButton.classList.add("btn-dark");
+        }
+    });
+
 });

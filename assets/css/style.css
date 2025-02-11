@@ -27,7 +27,6 @@ h4, label {
     overflow: auto;
     background-color: #FFF;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    padding: 3em;
     text-align: justify;
 }
 .error-message {
@@ -51,10 +50,15 @@ h4, label {
         padding-right: 25vw;
     }
     .fixed-bottom-card {
+        padding: 3em;
         height: 100vh;
         width: 25vw;
+        min-width: 440px;
         right: 0;
-        bottom: 0;
+        top: 0;
+    }
+    .fixed-bottom-card .btn {
+        display: none;
     }
 }
 
@@ -63,9 +67,22 @@ h4, label {
         padding-bottom: 25vh;
     }
     .fixed-bottom-card {
+        padding: 3em 2em;
         height: 25vh;
-        bottom: 0;
+        bottom: -100px;
         left: 0;
-        width: 100vw
+        width: 100vw;
+        transition: bottom 300ms, height 300ms;
+    }
+    .fixed-bottom-card.show-card {
+        bottom: 0;
+        height: 85vh;
+    }
+    .fixed-bottom-card .btn {
+        position: sticky;
+        top: -25px;
+        margin-top: -30px;
+        margin-bottom: 30px;
+        z-index: 1;
     }
 }
